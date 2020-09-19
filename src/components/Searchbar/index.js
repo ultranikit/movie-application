@@ -12,6 +12,7 @@ const Searchbar = ({
   onCloseSearch,
   onKeyDown,
   onChange,
+  searchAction,
   ...props
 }) => {
   const dispatch = useDispatch();
@@ -19,18 +20,25 @@ const Searchbar = ({
   const { params, changeParams } = useSearchParams(selectLiveParams);
   const onKeyDownHandler = (event) => {
     event.persist();
-    const checkClass = event.target.classList.contains("searchbar-icon");
-    if (event.key === "Enter" || checkClass) {
+    if (event.key === "Enter") {
       dispatch(resetPageParam());
-      dispatch(onKeyDown(event));
+      dispatch(onKeyDown(params));
       dispatch(onCloseSearch());
+      event.target.blur();
     }
+  };
+
+  const onSearchButton = () => {
+    dispatch(resetPageParam());
+    dispatch(onKeyDown(params));
+    dispatch(onCloseSearch());
   };
 
   const onChangeHandler = (event) => {
     event.persist();
+    const newParams = { s: event.target.value };
     changeParams(event);
-    dispatch(onChange(event));
+    dispatch(onChange(newParams));
   };
 
   return (
@@ -44,10 +52,8 @@ const Searchbar = ({
         {...props}
       />
       <Button
-        value={params.s || ""}
-        name={props.name}
         title={<SearchIcon className="searchbar-icon" />}
-        onClick={(event) => onKeyDownHandler(event)}
+        onClick={() => onSearchButton()}
       />
     </div>
   );

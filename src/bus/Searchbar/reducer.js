@@ -6,19 +6,17 @@ const initialState = {
   totalResults: 1,
 };
 
-const setParams = (event, state) => {
-  const { name, value } = event.target;
+const setParams = (params, state) => {
   return {
     ...state,
-    params: { ...state.params, [name]: value },
+    params: { ...state.params, ...params },
   };
 };
 
-const setLiveSearchParams = (event, state) => {
-  const { name, value } = event.target;
+const setLiveSearchParams = (params, state) => {
   return {
     ...state,
-    liveSearchParams: { ...state.liveSearchParams, [name]: value },
+    liveSearchParams: { ...state.liveSearchParams, ...params },
   };
 };
 

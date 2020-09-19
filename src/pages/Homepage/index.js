@@ -73,6 +73,7 @@ const Homepage = () => {
               className="homepage__searchbar"
               placeholder="Search..."
               name="s"
+              searchAction={setSearchParams}
               onCloseSearch={closeSearchCollapse}
               onKeyDown={setSearchParams}
               resetPageParam={resetPageParam}
