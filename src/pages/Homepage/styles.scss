@@ -1,0 +1,156 @@
+.homepage {
+  &__title {
+    position: relative;
+    color: #fff;
+    font-weight: bold;
+    font-size: 6.4rem;
+    // left: 6rem;
+    top: -4rem;
+    z-index: 2;
+  }
+
+  &__searchbar {
+    position: relative;
+    width: 100%;
+    max-width: 54rem;
+    height: 5rem;
+    padding: 0 1rem;
+    font-size: 1.8rem;
+    z-index: 4;
+
+    &::placeholder {
+      color: #e5e5e5;
+    }
+  }
+
+  &__live-search {
+    position: relative;
+    max-width: 54rem;
+  }
+
+  &__live-search-list {
+    position: absolute;
+    border-top: 1px solid #000;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    background: #1d1d1d;
+    visibility: hidden;
+    z-index: 4;
+  }
+  &__live-search-list.show {
+    visibility: visible;
+  }
+
+  &__movie-container {
+    width: 80%;
+    margin-top: 15rem;
+    margin-left: auto;
+  }
+
+  &__loader {
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+  }
+
+  &__empty-result {
+    text-align: center;
+    color: #fff;
+    font-size: 4rem;
+  }
+
+  &__pagination-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__pagination-items {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  &__pagination-group {
+    display: flex;
+  }
+
+  &__pagination-prev,
+  &__pagination-next {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    color: #fff;
+
+    &:disabled {
+      color: #967474;
+      cursor: default;
+    }
+  }
+
+  &__pagination-prev {
+    margin-right: 6rem;
+    &:before {
+      content: "\27F5";
+      font-family: swiper-icons;
+      font-size: 4rem;
+      text-transform: none !important;
+      letter-spacing: 0;
+      font-variant: initial;
+      margin-right: 1rem;
+    }
+  }
+
+  &__pagination-next {
+    &:after {
+      content: "\27F6";
+      font-family: swiper-icons;
+      font-size: 4rem;
+      text-transform: none !important;
+      letter-spacing: 0;
+      font-variant: initial;
+      margin-left: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: "1024px") {
+  .homepage {
+    &__title {
+      font-size: 4rem;
+      top: -2.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: "768px") {
+  .homepage {
+    &__pagination-info {
+      flex-direction: column-reverse;
+      align-items: flex-end;
+    }
+  }
+}
+
+@media screen and (max-width: "600px") {
+  .homepage {
+    &__title {
+      font-size: 2.5rem;
+      top: -1.5rem;
+    }
+
+    &__movie-container {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: "480px") {
+  .homepage {
+    &__title {
+      font-size: 1.8rem;
+      top: -1.2rem;
+    }
+  }
+}

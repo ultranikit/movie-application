@@ -1,0 +1,53 @@
+@import "~reset-css";
+@import "./fonts.scss";
+@import "./color.styles.scss";
+
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: $mainBackground;
+}
+
+.container {
+  padding-left: 6rem;
+  padding-right: 7rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  border: none;
+  box-sizing: border-box;
+
+  &:focus {
+    border: none;
+    outline: 0;
+  }
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@media screen and (max-width: "480px") {
+  .container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}

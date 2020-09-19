@@ -1,0 +1,145 @@
+@import "../../assets/styles/color.styles.scss";
+
+.movie {
+  position: relative;
+  margin-bottom: 50px;
+
+  &__link {
+    &:hover .movie__image {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &:hover .movie__title {
+      font-size: 3.61rem;
+      color: #fff;
+    }
+    &:hover .movie__type {
+      font-size: 1.85rem;
+      color: #fff;
+    }
+    &:hover .movie__year {
+      font-size: 1.85rem;
+      color: #fff;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: -13rem;
+    left: -20rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.7s;
+    filter: brightness(30%);
+    -webkit-filter: brightness(30%);
+    z-index: -1;
+  }
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  &__options {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title,
+  &__year,
+  &__type {
+    transition: all 0.3s;
+    color: $filmTextColor;
+    font-weight: 600;
+  }
+  &__title {
+    width: 45%;
+    font-size: 3.6rem;
+  }
+
+  &__year,
+  &__type {
+    margin: 5px 0;
+    font-size: 1.8rem;
+    align-self: flex-end;
+  }
+}
+
+@media screen and (max-width: "1024px") {
+  .movie {
+    &__link {
+      &:hover .movie__title {
+        font-size: 2.51rem;
+        color: #fff;
+      }
+      &:hover .movie__type {
+        font-size: 2rem;
+        color: #fff;
+      }
+      &:hover .movie__year {
+        font-size: 2rem;
+        color: #fff;
+      }
+    }
+
+    &__image {
+      left: -15rem;
+    }
+
+    &__title {
+      font-size: 2.5rem;
+    }
+
+    &__year,
+    &__type {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: "600px") {
+  .movie {
+    &__link {
+      &:hover .movie__title {
+        font-size: 2.05rem;
+        color: #fff;
+      }
+      &:hover .movie__type {
+        font-size: 1.8rem;
+        color: #fff;
+      }
+      &:hover .movie__year {
+        font-size: 1.8rem;
+        color: #fff;
+      }
+    }
+
+    &__image {
+      left: unset;
+
+      right: -3rem;
+      max-height: 300px;
+    }
+
+    &__title {
+      width: 60%;
+      font-size: 2rem;
+    }
+
+    &__year,
+    &__type {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+@media screen and (max-width: "480px") {
+  .movie {
+    &__image {
+      left: unset;
+      top: -10rem;
+      right: -2rem;
+      max-height: 250px;
+    }
+  }
+}

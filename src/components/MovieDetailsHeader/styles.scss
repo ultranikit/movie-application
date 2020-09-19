@@ -1,0 +1,29 @@
+.movie-details-header {
+  position: relative;
+  width: 97%;
+  height: 37rem;
+}
+
+.movie-details-header-button {
+  position: absolute;
+  top: 30%;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  color: #fff;
+  transition: 0.5s;
+
+  &:hover {
+    transform: translateX(-1rem);
+  }
+}
+
+.movie-details-header-button:before {
+  content: "\27F5";
+  font-family: swiper-icons;
+  font-size: var(--swiper-navigation-size);
+  text-transform: none !important;
+  letter-spacing: 0;
+  font-variant: initial;
+  margin-right: 1rem;
+}

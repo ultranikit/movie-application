@@ -1,0 +1,18 @@
+@import "../../assets/styles/color.styles.scss";
+
+.searchbar-container {
+  position: relative;
+  max-width: 54rem;
+  z-index: 4;
+
+  button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 4;
+    svg {
+      font-size: 3rem !important;
+      color: $searchIconColor;
+    }
+  }
+}

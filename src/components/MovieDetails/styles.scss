@@ -1,0 +1,102 @@
+$movieDetailsColor: #fff;
+
+.movie-details {
+  display: flex;
+  justify-content: center;
+
+  &__poster {
+    position: relative;
+    top: -10rem;
+  }
+
+  &__rating-group {
+    margin-top: 5rem;
+    margin-left: 1rem;
+    color: $movieDetailsColor;
+    font-weight: bold;
+  }
+  &__rating-title {
+    margin-bottom: 1rem;
+
+    font-size: 3rem;
+  }
+
+  &__rating-number {
+    font-size: 3.8rem;
+  }
+  &__rating-divider {
+    margin: 0 1rem;
+  }
+  &__rating-max {
+    font-size: 3.6rem;
+  }
+
+  &__main-information {
+    margin: 3rem 0;
+    margin-left: 4rem;
+  }
+
+  &__title {
+    color: $movieDetailsColor;
+    font-size: 4.8rem;
+    font-weight: bold;
+  }
+
+  &__info-list {
+    max-width: 600px;
+    margin-top: 5rem;
+    margin-left: 10rem;
+    &__item {
+      margin-top: 3rem;
+      color: $movieDetailsColor;
+    }
+    &__title {
+      font-size: 2.2rem;
+    }
+
+    &__data {
+      font-size: 2.2rem;
+      font-weight: 600;
+    }
+
+    &__description {
+      margin-top: 5rem;
+      font-size: 1.8rem;
+    }
+  }
+}
+
+@media screen and (max-width: "1024px") {
+  .movie-details {
+    &__main-information {
+      margin-left: 4rem;
+    }
+    &__title {
+      font-size: 3.6rem;
+    }
+    &__info-list {
+      margin-left: 4rem;
+
+      &__title {
+        font-size: 1.8rem;
+      }
+
+      &__data {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: "768px") {
+  .movie-details {
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+
+    &__main-information {
+      margin-top: -3rem;
+      margin-left: 0;
+    }
+  }
+}
