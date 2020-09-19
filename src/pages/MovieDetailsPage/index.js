@@ -1,17 +1,16 @@
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useGetMovieDetails } from "../../bus/Movie/hooks/useGetMovieDetails";
-import { selectMovieDetails } from "../../bus/Movie/selectors";
 import { setMovieDetailshFailure } from "../../bus/Movie/actions";
 import MovieDetails from "../../components/MovieDetails";
 import MovieDetailsHeader from "../../components/MovieDetailsHeader";
-
+import Loader from "../../components/Loader";
+import "./styles.scss";
 const MovieDetailsPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const { getMovie } = useGetMovieDetails();
-  const movie = useSelector(selectMovieDetails);
+  const { getMovie, loading, movie } = useGetMovieDetails();
 
   useEffect(() => {
     getMovie(id);
@@ -22,7 +21,13 @@ const MovieDetailsPage = () => {
   return (
     <>
       <MovieDetailsHeader />
-      {movie && <MovieDetails movie={movie} />}
+      {loading ? (
+        <div className="movie-details-loader">
+          <Loader />
+        </div>
+      ) : (
+        <MovieDetails movie={movie} />
+      )}
     </>
   );
 };
